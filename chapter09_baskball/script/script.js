@@ -108,4 +108,21 @@ function onUserShoot(shootType) {
   // JS 상에서 --를 먹을 뿐이지 HTML에서 가시적으로 바뀌지 않음
   let shootLeftElement = document.getElementById('shoots-left')
   shootLeftElement.innerHTML = shootLeft;
+
+  // 조건문 적용 -> shootLeft === 0 일 때 게임종료
+  if(shootLeft === 0) {
+    // 사용자가 이겼을 때
+    if(userScore > comScore){
+      alert('U.team Win👑');
+      textElement.innerHTML = 'U.team Win👑'
+    }else if(userScore < comScore){
+      // 졌을 때
+      alert('C.team Win👑');
+      textElement.innerHTML = 'C.team Win👑'
+    }else {
+      // 비겼을 때
+      alert('end in a draw');
+      textElement.innerHTML = 'end in a draw'
+    }
+  }
 }
