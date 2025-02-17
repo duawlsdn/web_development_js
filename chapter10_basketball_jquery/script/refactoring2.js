@@ -1,18 +1,15 @@
-// 컴퓨터 관련 오브젝트
 let computer = {
   score: 0,
   percent2: 0.5,
   percent3: 0.33
 };
 
-// 사용자 관련 오브젝트
 let user = {
   score: 0,
   percent2: 0.5,
   percent3: 0.33
 };
 
-// 게임 관련 오브젝트
 let game = {
   isComputerTurn: true,
   shootLeft: 15
@@ -50,7 +47,6 @@ function disabledUserButton(flog) {
   for(let i = 0; i < userButtons.length; i++) userButtons[i].disabled = flog;
 }
 
-// 여기에 시나리오 관련한 함수를 작성할 예정
 function updateAI() {
   let difference = user.score - computer.score
 
@@ -77,7 +73,6 @@ function onComputerShoot() {
   let shootType = Math.random() < 0.5 ? 2 : 3;
 
   if(Math.random() < computer['percent' + shootType]) { 
-    // 결과값은 'percent2' 거나 'percent3' 가 되므로 computer['percent2'] / computer['percent3']의 value가 산출됨
     showText('C.team ' + shootType + ' Point🏀💦')
     updateComScore(2);
   }else{
