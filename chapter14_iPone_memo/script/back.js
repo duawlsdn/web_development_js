@@ -4,5 +4,5 @@ backButton.onclick = () => {
 }
 
 function goBack() {
-  location.href = './list.html'
+  location.href = './list.html';
 }
